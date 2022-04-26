@@ -17,6 +17,14 @@
 <!-- About the Project -->
 ## 🌟 About the Project
 
-<div align="center"> 
-  <img src="https://placehold.co/600x400?text=Your+Screenshot+here" alt="screenshot" />
-</div>
+This is a start kit built using NextJS and Tailwind CSS. I use this starter kit for any new projects I want to build with a React core and to ultimately host within AWS Amplify.
+
+Currently AWS Amplify has issues supporting the API of NextJS on Versions > 12.0.8 (at time of writing on 26th Apr 2022), hence why this is using NextJS V12.0.8
+
+I've added in [React Icons](https://react-icons.github.io/react-icons/) as well as Tailwinds [Headless UI](https://headlessui.dev/react/tabs)
+
+
+<!-- Features -->
+### 🎯 Features
+
+- *feature/blogs-markdown* - Added the ability to have Markdown blog articles, NextJS will read these files at build time and create the pages before deploying
