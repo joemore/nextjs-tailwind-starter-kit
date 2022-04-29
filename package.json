@@ -6,10 +6,12 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "postbuild": "node post-build.js"
   },
   "dependencies": {
     "@headlessui/react": "^1.5.0",
+    "fs-extra": "^10.1.0",
     "gray-matter": "^4.0.3",
     "next": "12.1.4",
     "react": "18.0.0",

@@ -18,7 +18,7 @@ const SITE_ROUTE = process.env.NODE_ENV === 'development' ? 'http://localhost:30
 
 const getFileLastMod = async (PAGE : string) => {
     try{
-        const filePath = path.join(process.cwd(),PAGE)
+        const filePath = path.join('../',PAGE)
         const stats = await fsPromises.stat(filePath);
         return await new Date(stats.mtime).toISOString();
     }catch(err){
