@@ -2,7 +2,7 @@ import fs from 'fs'
 import path from 'path';
 import matter from 'gray-matter'
 
-const postsDirectory = path.join(process.cwd(),'markdown-blogs')
+const postsDirectory = path.join('../','markdown-blogs')
 
 export function getBlogsFiles(){
     return fs.readdirSync(postsDirectory)

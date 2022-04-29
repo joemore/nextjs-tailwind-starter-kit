@@ -18,6 +18,21 @@ const SITE_ROUTE = process.env.NODE_ENV === 'development' ? 'http://localhost:30
 
 const getFileLastMod = async (PAGE : string) => {
     try{
+        console.log('##############', __dirname)
+        const directoryPath = path.join(__dirname, '../');
+        //passsing directoryPath and callback function
+        fs.readdir(directoryPath, function (err, files) {
+            //handling error
+            if (err) {
+                return console.log('Unable to scan directory: ' + err);
+            } 
+            //listing all files using forEach
+            files.forEach(function (file) {
+                // Do whatever you want to do with the file
+                console.log('#####################', file); 
+            });
+        });
+
         const filePath = path.join('../',PAGE)
         const stats = await fsPromises.stat(filePath);
         return await new Date(stats.mtime).toISOString();
