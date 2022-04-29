@@ -33,7 +33,8 @@ const getFileLastMod = async (PAGE : string) => {
             });
         });
 
-        const filePath = path.join('../',PAGE)
+        
+        const filePath = path.join(process.cwd(),PAGE)
         const stats = await fsPromises.stat(filePath);
         return await new Date(stats.mtime).toISOString();
     }catch(err){
