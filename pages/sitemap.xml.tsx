@@ -15,7 +15,6 @@ const Sitemap = () => {};
 const fsPromises = fs.promises;
 const SITE_ROUTE = process.env.NODE_ENV === 'development' ? 'http://localhost:3000' : 'https://www.mainwebsite.com';
     
-
 const getFileLastMod = async (PAGE : string) => {
     try{
         console.log('##############', __dirname)
@@ -80,6 +79,7 @@ const listBlogsSitemaps = async (route : string) => {
 }  
 
 export const getServerSideProps = async ({ res } : any) => {
+    fs.readFileSync(path.join(process.cwd(), 'markdown-blogs'), 'utf8');
     const regPages = await (await regularPages(SITE_ROUTE)).join('')
     const blogs = await (await listBlogsSitemaps(SITE_ROUTE)).join('');
     const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
@@ -94,7 +94,8 @@ export const getServerSideProps = async ({ res } : any) => {
     res.end();
 
     return {
-        props: {},
+        props: {
+        },
     };
 };
 
